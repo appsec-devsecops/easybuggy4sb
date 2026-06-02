@@ -20,7 +20,7 @@ jobs:
       - name: Checkmarx One CLI Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
-          project_name: ${{ github.repository }}
+          project_name: githubActions_easybuggy4sb #${{ github.repository }}
           cx_tenant: profuturo
           base_uri: https://ast.checkmarx.net
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
