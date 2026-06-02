@@ -26,4 +26,9 @@ jobs:
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           branch: ${{ github.ref_name }}
-          additional_params: --scan-types sast,sca,api-security
+          additional_params: --scan-types sast,sca,api-security --report-format sarif --output-path .
+
+      - name: Upload SARIF
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: cx_result.sarif
